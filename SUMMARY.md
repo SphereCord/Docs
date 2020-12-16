@@ -7,3 +7,7 @@
 
 * [Веб-крючки](guides/webhooks.md)
 
+## Полезное <a id="useful"></a>
+
+* [Заменители](useful/replacers.md)
+

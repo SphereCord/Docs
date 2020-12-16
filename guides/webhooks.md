@@ -24,7 +24,7 @@ app.post('/webhook', (req, res) => {
     // Ваш код
 })
 
-app.listen(PORT, () => console.log(`App is listening port ${PORT}`))
+app.listen(PORT, () => console.log(`App is listening on port ${PORT}`))
 ```
 {% endtab %}
 {% endtabs %}
@@ -65,7 +65,7 @@ app.listen(PORT, () => console.log(`App is listening port ${PORT}`))
     user_id: "258317078560243712",
     review: {
         id: "258317078560243712",
-        timestamp: 1604839992654,
+        published_timestamp: 1604839992654,
         stars: 5,
         content: {
             title: "Lorem Ipsum",
@@ -79,7 +79,7 @@ app.listen(PORT, () => console.log(`App is listening port ${PORT}`))
 
 ## Проверка подлинности
 
-Мы предлагаем вам использовать это для идентификации нашего сервиса. Обратите внимание, что запрос содержит в себе заголовок `Authorization`, который представляет из себя HEX-digest, содержащий тело запроса подписанный с помощью [HMAC](https://ru.wikipedia.org/wiki/HMAC) \(алгоритм SHA256\) с использованием вашего секретного ключа. Помните, что секретный ключ всегда должен оставаться секретным.
+Мы предлагаем вам использовать это для идентификации нашего сервиса. Обратите внимание, что запрос содержит в себе заголовок `X-Sphere-Signature`, который представляет из себя HEX-digest, содержащий тело запроса подписанный с помощью [HMAC](https://ru.wikipedia.org/wiki/HMAC) \(алгоритм SHA256\) с использованием вашего секретного ключа. Помните, что секретный ключ всегда должен оставаться секретным.
 
 {% tabs %}
 {% tab title="Node.js" %}
@@ -89,7 +89,7 @@ const crypto = require('crypto')
 const SECRET_KEY = 'ВАШ_СЕКРЕТНЫЙ_КЛЮЧ'
 const DATA = JSON.stringify(req.body)
 
-const hash = req.headers.authorization
+const hash = req.headers['x-sphere-signature']
 const hmac = crypto.createHmac('sha256', SECRET_KEY).update(DATA).digest('hex')
 
 if (hash === hmac) {
