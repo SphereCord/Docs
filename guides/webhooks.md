@@ -27,6 +27,21 @@ app.post('/webhook', (req, res) => {
 app.listen(PORT, () => console.log(`App is listening on port ${PORT}`))
 ```
 {% endtab %}
+
+{% tab title="Python" %}
+```python
+from flask import Flask
+
+app = Flasp(__name__)
+PORT = 3266
+
+@app.route('webhook', methods=['POST'])
+def webhook():
+    # Ваш код
+
+app.run(port=PORT)
+```
+{% endtab %}
 {% endtabs %}
 
 ### Тело входящего запроса
