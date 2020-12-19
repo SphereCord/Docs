@@ -16,7 +16,7 @@ description: Получение оповещений в реальном вре�
 const express = require('express')
 
 const app = express()
-const PORT = 3266
+const PORT = 3266 // У вас может быть любой другой
 
 app.use(express.json())
 
@@ -33,7 +33,7 @@ app.listen(PORT, () => console.log(`App is listening on port ${PORT}`))
 from flask import Flask
 
 app = Flask(__name__)
-PORT = 3266
+PORT = 3266 # У вас может быть любой другой
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
