@@ -39,7 +39,7 @@ app.listen(PORT, () => console.log(`App is listening on port ${PORT}`))
 | :--- | :--- | :--- |
 | `event` | string | Название события |
 | `guild_id` | snowflake | Идентификатор сервера |
-| `user_id` | string | Идентификатор пользователя |
+| `user_id` | snowflake | Идентификатор пользователя |
 
 ```javascript
 {
@@ -55,7 +55,7 @@ app.listen(PORT, () => console.log(`App is listening on port ${PORT}`))
 | :--- | :--- | :--- |
 | `event` | string | Название события |
 | `guild_id` | snowflake | Идентификатор сервера |
-| `user_id` | string | Идентификатор пользователя |
+| `user_id` | snowflake | Идентификатор пользователя |
 | `review` | object | Данные оставленного отзыва |
 
 ```javascript
