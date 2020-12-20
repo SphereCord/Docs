@@ -122,6 +122,8 @@ else {
 import hmac
 import hashlib
 
+from flask import request
+
 secret_key = b'ВАШ_СЕКРЕТНЫЙ_КЛЮЧ'
 data = request.data.encode('utf-8')
 
