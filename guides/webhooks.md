@@ -33,7 +33,7 @@ app.listen(PORT, () => console.log(`App is listening on port ${PORT}`))
 from flask import Flask
 
 app = Flask(__name__)
-PORT = 3266 # У вас может быть любой другой
+PORT = 3266  # У вас может быть любой другой
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
