@@ -33,7 +33,7 @@ app.listen(PORT, () => console.log(`App is listening on port ${PORT}`))
 from flask import Flask
 
 app = Flask(__name__)
-PORT = 3266  # У вас может быть любой другой
+PORT = 3266 # У вас может быть любой другой
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -116,12 +116,13 @@ else {
 }
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 import hmac
 import hashlib
 
-secret_key = b'126f6954b62cd81a11bc0adf42e571ec129bb8883c3c34d82da1e42f84a27cab'
+secret_key = b'ВАШ_СЕКРЕТНЫЙ_КЛЮЧ'
 data = request.data.encode('utf-8')
 
 _hash = request.headers.get('X-Sphere-Signature')
